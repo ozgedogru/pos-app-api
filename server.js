@@ -17,9 +17,7 @@ dotenv.config();
 
 const connect = async () => {
   try {
-    await mongoose.connect(
-      `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.sgcni.mongodb.net/pos-application`
-    );
+    await mongoose.connect(process.env.MONGO_URI);
     console.log("connected to mongodb");
   } catch (error) {
     throw error;
